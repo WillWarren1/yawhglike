@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://1uxar1imnsnm"]
+
+[ext_resource type="Texture2D" uid="uid://br8oa5n41300v" path="res://assets/structure_church.png" id="1_q4l6t"]
+[ext_resource type="Script" path="res://Button.gd" id="2_3o3il"]
+
+[node name="Location" type="Node2D"]
+position = Vector2(478, 256)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q4l6t")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -50.0
+offset_top = 27.0
+offset_right = 57.0
+offset_bottom = 58.0
+text = "Click to Start"
+script = ExtResource("2_3o3il")
+encounter_index = ["welcome"]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwcjylipcxmav"]
+
+[ext_resource type="Texture2D" uid="uid://dhqbcik7ioan3" path="res://assets/Sample_fantasy.png" id="1_mn5ir"]
+[ext_resource type="PackedScene" uid="uid://1uxar1imnsnm" path="res://location.tscn" id="2_dc5uc"]
+[ext_resource type="Texture2D" uid="uid://b5fon82abvfap" path="res://assets/structure_farm.png" id="3_8x4xx"]
+[ext_resource type="Texture2D" uid="uid://2krxxp7lmnlr" path="res://assets/structure_tower.png" id="4_2hqfu"]
+
+[node name="Board" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(542, 378)
+scale = Vector2(1.46117, 1.46117)
+texture = ExtResource("1_mn5ir")
+
+[node name="Location" parent="Sprite2D" instance=ExtResource("2_dc5uc")]
+position = Vector2(-66.3854, 68.4386)
+scale = Vector2(0.684385, 0.684385)
+
+[node name="Location2" parent="Sprite2D" instance=ExtResource("2_dc5uc")]
+position = Vector2(236.113, 82.1263)
+
+[node name="Sprite2D" parent="Sprite2D/Location2" index="0"]
+texture = ExtResource("3_8x4xx")
+
+[node name="Button" parent="Sprite2D/Location2" index="1"]
+encounter_index = ["farm welcome"]
+
+[node name="Location3" parent="Sprite2D" instance=ExtResource("2_dc5uc")]
+position = Vector2(-212.159, -124.558)
+
+[node name="Sprite2D" parent="Sprite2D/Location3" index="0"]
+texture = ExtResource("4_2hqfu")
+
+[node name="Button" parent="Sprite2D/Location3" index="1"]
+encounter_index = ["armory welcome"]
+
+[editable path="Sprite2D/Location"]
+[editable path="Sprite2D/Location2"]
+[editable path="Sprite2D/Location3"]
